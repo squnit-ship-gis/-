@@ -1,8 +1,7 @@
 streamlit
-pandas
 geopandas
-folium
 streamlit-folium
+folium
 shapely
 fiona
 pyproj
