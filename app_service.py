@@ -13,7 +13,8 @@ def show_map(layer_data, map_key, color):
         return
 
     map_layer = layer_data.to_crs(epsg=4326)
-    center = map_layer.geometry.unary_union.centroid
+    # بدلاً من السطر القديم، استخدم هذا لضمان حساب المركز بشكل صحيح
+    center = map_layer.dissolve().centroid.iloc[0]
 
     my_map = folium.Map(
         location=[center.y, center.x],
